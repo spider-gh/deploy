@@ -1,0 +1,12 @@
+---
+ - hosts: all
+   tasks:
+      
+     - name: Deploy Dev code
+       git:
+         repo: 'https://github.com/spider-gh/phpinfo.git'
+         dest: /usr/share/nginx/html
+         update: yes
+       become: true
+       become_user: nginx
+       become_method: su
